@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>TP3 - Contacto</title>
+	</head>
+	<body>
+	<header>
+		<h1>Formulario de Contacto</h1>
+		<br/>
+		<img src="../static/images/contacto.jpg" width="300" height="150" alt="Contacto portada" title="contacto">
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html">Inicio</a></li>
+			<li><a href="agenda.html">Agenda</a></li>
+			<li><a href="beneficios.html">Beneficios y Becas</a></li>
+			<li><a href="contacto.html">Contactanos</a></li>
+		</ul>
+	</nav>
+	<br/>
+	<form action="" method="post">
+		<label>Nombre y Apellido:</label> 
+		<input id="idnomape" type="text" name="nomyape"/><br/><br/>
+		<label>Provincia: </label>
+		<select name="provincia">
+				<option value="JUJUY">Jujuy</option>
+				<option value="SALTA">Salta</option>
+				<option value="TUCUMAN">Tucuman</option>
+		</select><br/><br/>
+		<label>Télefono:</label> 
+		<input id="idtel" type="number" name="telefono"/><br/><br/>
+		<label>Correo electrónico:</label> 
+		<input id="idemail" type="email" name="email"/><br/><br/>
+		<label>Estado Civil:</label> <br/>
+		<input id="idcasado" type="radio" value="casado" name="estadocivil"/>
+		<label for="idcasado">Casado</label><br/>
+		<input id="idlsoltero" type="radio" value="soltero" name="estadocivil"/>
+		<label for="idlsoltero">Soltero</label><br/>
+		<input id="idotro" type="radio" value="otro" name="estadocivil"/>
+		<label for="idotro">Otro</label><br/><br/>
+		<label>Mensaje</label>
+		<textarea></textarea><br/><br/>
+		<button type="submit">Enviar Datos</button>
+	</form>
+	<footer>
+		<p>2022. Portal de Capacitación – Av. Gral. Manuel Belgrano 789 – Teléfono (388) 999999 S. S. de Jujuy República Argentina.</p>
+	</footer>
+	</body>
+</html>
