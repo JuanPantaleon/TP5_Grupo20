@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
 	<head>
 		<meta charset="utf-8">
 		<title>TP5 - Idiomas</title>
@@ -10,14 +10,7 @@
 			<br/>
 			<img src="../static/images/idiomas.jpeg" width="300" height="150" alt="Img idiomas" title="idiomas">
 		</header>
-		<nav>
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="agenda.html">Agenda</a></li>
-				<li><a href="beneficios.html">Beneficios y Becas</a></li>
-				<li><a href="contacto.html">Contactanos</a></li>
-			</ul>
-		</nav>
+		<header th:replace="layouts/header::header"></header>
 		<section>
 			<h3>Cursos Disponibles</h3>
 			<p>Listado de cursos que se encuentran con inscripcion abierta:</p>

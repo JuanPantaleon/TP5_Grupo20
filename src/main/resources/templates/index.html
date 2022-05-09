@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
 	<head>
 		<title>TP5 - Inicio</title>
 		<meta charset="utf-8"/>
@@ -9,16 +9,9 @@
 		<header>
 			<h1>TITULO</h1>
 			<br/>
-			<img src="../static/images/cursos.jpg" width="300" height="200" alt="Imagen del punto 1" title="presentacion">
+			<img src="/src/main/resources/static/images/cursos.jpg" width="300" height="200" alt="Imagen del punto 1" title="presentacion">
 		</header>
-		<nav>
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="agenda.html">Agenda</a></li>
-				<li><a href="beneficios.html">Beneficios y Becas</a></li>
-				<li><a href="contacto.html">Contactanos</a></li>
-			</ul>
-		</nav>
+		<header th:replace="layouts/header::header"></header>
 		<br/>
 		<section>
 			<h1>Cursos con inscripcion abierta</h1>
@@ -30,8 +23,6 @@
 				<li><a href="">Conferencias</a></li>
 			</ol>
 		</section>
-		<footer>
-			<p>2022. Portal de Capacitación – Av. Gral. Manuel Belgrano 789 – Teléfono (388) 999999 S. S. de Jujuy República Argentina.</p>
-		</footer>
+		<footer th:replace="layouts/footer::footer"></footer>
 	</body>
 </html>

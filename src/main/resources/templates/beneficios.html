@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
 	<head>
 		<title>TP5 - Beneficios</title>
 		<meta charset="utf-8"/>
@@ -11,23 +11,14 @@
 			<br/>
 			<img src="../static/images/beneficios.png" width="300" height="150" alt="Imagen del head" title="beneficios">
 		</header>
-		<nav>
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="agenda.html">Agenda</a></li>
-				<li><a href="beneficios.html">Beneficios y Becas</a></li>
-				<li><a href="contacto.html">Contactanos</a></li>
-			</ul>
-		</nav>
+		<header th:replace="layouts/header::header"></header>
 		<br/>
 		
 		<section>
 			<p>Página en construcción</p>
 		</section>
 		
-		<footer>
-			<p>2022. Portal de Capacitación – Av. Gral. Manuel Belgrano 789 – Teléfono (388) 999999 S. S. de Jujuy República Argentina.</p>
-		</footer>
+		<footer th:replace="layouts/footer::footer"></footer>
 		
 	</body>
 </html>
