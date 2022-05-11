@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>TP5 - Contacto</title>
+	</head>
+	<body>
+		<header th:replace="layouts/header::header"></header>
+		<header>
+			<h1>Formulario de Contacto</h1>
+			<br/>
+			<img th:src="@{/images/contacto.jpg}" width="300" height="150" alt="Contacto portada" title="contacto">
+		</header>
+		<br/>
+		<form th:action="@{/alumno/guardar}" method="post" >
+			<label>Nombre y Apellido:</label> 
+			<input id="idnomape" type="text" name="nomyape"/><br/><br/>
+			<label>Provincia: </label>
+			<select name="provincia">
+					<option value="JUJUY">Jujuy</option>
+					<option value="SALTA">Salta</option>
+					<option value="TUCUMAN">Tucuman</option>
+			</select><br/><br/>
+			<label>Télefono:</label> 
+			<input id="idtel" type="number" name="telefono"/><br/><br/>
+			<label>Correo electrónico:</label> 
+			<input id="idemail" type="email" name="email"/><br/><br/>
+			<label>Estado Civil:</label> <br/>
+			<input id="idcasado" type="radio" value="casado" name="estadocivil"/>
+			<label for="idcasado">Casado</label><br/>
+			<input id="idlsoltero" type="radio" value="soltero" name="estadocivil"/>
+			<label for="idlsoltero">Soltero</label><br/>
+			<input id="idotro" type="radio" value="otro" name="estadocivil"/>
+			<label for="idotro">Otro</label><br/><br/>
+			<label>Mensaje</label>
+			<textarea></textarea><br/><br/>
+			<button type="submit" class="btn btn-lg btn-primary" >Enviar Datos</button>
+			<button type="button" class="btn btn-secondary btn-lg" >Cancelar</button>
+		</form>
+		<form>
+			  <div class="mb-3">
+			    <label for="exampleInputEmail1" class="form-label">Email address</label>
+			    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+			    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+			  </div>
+			  <div class="mb-3">
+			    <label for="exampleInputPassword1" class="form-label">Password</label>
+			    <input type="password" class="form-control" id="exampleInputPassword1">
+			  </div>
+			  <div class="mb-3 form-check">
+			    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+			    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+			  </div>
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		<footer th:replace="layouts/footer::footer"></footer>
+	</body>
+</html>

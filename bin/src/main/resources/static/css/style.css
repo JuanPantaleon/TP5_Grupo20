@@ -1,0 +1,16 @@
+@charset "UTF-8";
+p{
+	color:red;
+}
+
+h1{
+	color:blue;
+}
+
+a{
+	color:purple;
+}
+
+a:hover{
+	color:yellow;
+}

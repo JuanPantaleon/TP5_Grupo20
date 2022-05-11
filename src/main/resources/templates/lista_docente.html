@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>TP5 - Docentes</title>
+	</head>
+	<body>
+		<header th:replace="layouts/header::header"></header>
+		<br>
+		<div class="container">
+			<h1 class="text-center text-primary">Docentes</h1>
+			<br>
+			<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+			  <a th:href="@{/docente/cargar}" class="btn btn-primary me-md-2" >Nuevo</a>
+			</div>
+			<table class="table">
+				<thead>
+				    <tr>
+				      <th scope="col">Legajo</th>
+				      <th scope="col">Nombre</th>
+				      <th scope="col">Apellido</th>
+				      <th scope="col">Email</th>
+				      <th scope="col">Telefono</th>
+				      <th scope="col">Opciones</th>
+				    </tr>
+				</thead>
+				<tbody>
+				    <tr th:each="docente: ${docentes}">
+				      <th scope="row" th:text="${docente.legajo}"></th>
+				      <td th:text="${docente.nombre}"></td>
+				      <td th:text="${docente.apellido}"></td>
+				      <td th:text="${docente.email}"></td>
+				      <td th:text="${docente.telefono}"></td>
+				      <td>
+				      	<a class="btn btn-warning">Editar</a>
+				      	<a class="btn btn-danger">Eliminar</a>
+				      </td>
+				    </tr>
+				</tbody>
+			</table>
+		</div>
+		<footer th:replace="layouts/footer::footer"></footer>
+	</body>
+</html>
