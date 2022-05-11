@@ -6,17 +6,17 @@
 		<meta name="author" content="Maxwell"/>
 	</head>
 	<body>
-		<header>
-			<h1>TITULO</h1>
-			<br/>
-			<img src="/src/main/resources/static/images/cursos.jpg" width="300" height="200" alt="Imagen del punto 1" title="presentacion">
-		</header>
 		<header th:replace="layouts/header::header"></header>
+		<header>
+			<h1>Inicio</h1>
+			<br/>
+			<img th:src="@{images/cursos.jpg}" width="300" height="200" alt="Imagen del punto 1" title="presentacion">
+		</header>
 		<br/>
 		<section>
 			<h1>Cursos con inscripcion abierta</h1>
 			<ol>
-				<li><a href="idiomas.html">Idiomas</a></li>
+				<li><a href="idiomas">Idiomas</a></li>
 				<li><a href="">Diseño</a></li>
 				<li><a href="">Desarrollo</a></li>
 				<li><a href="">Marketing</a></li>

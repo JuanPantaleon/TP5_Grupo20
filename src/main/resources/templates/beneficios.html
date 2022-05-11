@@ -6,12 +6,12 @@
 		<meta name="author" content="Maxwell"/>
 	</head>
 	<body>
+		<header th:replace="layouts/header::header"></header>
 		<header>
 			<h1>Beneficios</h1>
 			<br/>
-			<img src="../static/images/beneficios.png" width="300" height="150" alt="Imagen del head" title="beneficios">
+			<img th:src="@{/images/beneficios.png}" width="300" height="150" alt="Imagen del head" title="beneficios">
 		</header>
-		<header th:replace="layouts/header::header"></header>
 		<br/>
 		
 		<section>

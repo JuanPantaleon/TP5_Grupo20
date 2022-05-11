@@ -25,4 +25,9 @@ public class PagesController {
 	public String getContactoPage() {
 		return "contacto";
 	}
+	
+	@GetMapping("/idiomas")
+	public String getIdiomasPage() {
+		return "idiomas";
+	}
 }
