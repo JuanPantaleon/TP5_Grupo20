@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>TP5 - Beca</title>
+	</head>
+	<body>
+		<header th:replace="/layouts/header::header"></header>
+		<br>
+		<div class="container">
+			<form th:action="@{/beca}" method="post" th:object="${becaAlias}">
+				<div class="mb-3">
+				  	<label for="idCodigo" class="form-label">Codigo</label>
+					<input type="number" class="form-control" id="idCodigo" th:field=*{codigo}>
+				</div>
+				<div class="mb-3">
+				  	<label for="idFechaInicio" class="form-label">Fecha Inicio</label>
+					<input type="date" class="form-control" id="idFechaInicio" th:field=*{fechaInicio}>
+				</div>
+				<div class="mb-3">
+				  	<label for="idFechaFin" class="form-label">Fecha Cierre</label>
+					<input type="date" class="form-control" id="idFechaFin" th:field=*{fechaCierre}>
+				</div>
+				<div class="mb-3">
+					<label class="mb-2">Estado</label>
+					<select class="form-select" aria-label="Estado" th:field=*{estado}>
+						<option value="Activa" >Activa</option>
+						<option value="Inactiva">Inactiva</option>
+					</select>
+				</div>
+				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+				  	<button type="submit" class="btn btn-primary">Enviar</button>	
+				  	<a th:href="@{/beca}" class="btn btn-secondary">Cancelar</a>
+				</div>
+			</form>
+		</div>
+		<footer th:replace="/layouts/footer::footer"></footer>
+	</body>
+</html>

@@ -1,12 +1,10 @@
 package ar.edu.fi.unju.aplicacion.model;
 
-import java.time.LocalDate;
-
 public class Beca {
 	private int codigo;
 	private Curso curso;
-	private LocalDate fechaInicio;
-	private LocalDate fechaCierre;
+	private String fechaInicio;
+	private String fechaCierre;
 	private String estado;
 	
 	public Beca() {
@@ -25,16 +23,16 @@ public class Beca {
 	public void setCurso(Curso curso) {
 		this.curso = curso;
 	}
-	public LocalDate getFechaInicio() {
+	public String getFechaInicio() {
 		return fechaInicio;
 	}
-	public void setFechaInicio(LocalDate fechaInicio) {
+	public void setFechaInicio(String fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
-	public LocalDate getFechaCierre() {
+	public String getFechaCierre() {
 		return fechaCierre;
 	}
-	public void setFehcaCierre(LocalDate fechaCierre) {
+	public void setFechaCierre(String fechaCierre) {
 		this.fechaCierre = fechaCierre;
 	}
 	public String getEstado() {
@@ -43,7 +41,7 @@ public class Beca {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	public Beca(int codigo, Curso curso, LocalDate fechaInicio, LocalDate fechaCierre, String estado) {
+	public Beca(int codigo, Curso curso, String fechaInicio, String fechaCierre, String estado) {
 		super();
 		this.codigo = codigo;
 		this.curso = curso;
@@ -51,4 +49,6 @@ public class Beca {
 		this.fechaCierre = fechaCierre;
 		this.estado = estado;
 	}
+	
+	
 }
