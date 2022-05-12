@@ -2,6 +2,8 @@ package ar.edu.fi.unju.aplicacion.controller;
 
 import java.util.ArrayList;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,8 @@ import ar.edu.fi.unju.aplicacion.model.Docente;
 @Controller
 @RequestMapping("/curso")
 public class CursoController {
+	
+	Log LOGGER = LogFactory.getLog(CursoController.class);
 	
 	@GetMapping("/cargar")
 	public String getCargarCursoPage(Model model) {
@@ -32,6 +36,7 @@ public class CursoController {
 		arrayCurso.add(new Curso(2, "Frances I", "Idiomas", "26-06-2022", "18-12-2022", 144, "Presencial", new Docente(102,"Lionel","Messi","l10m@mail.com","3884987462")));
 		curso.setDocente(new Docente(3, "David", "Quint", "davooxeneize@gmail.com", "3885729987"));
 		arrayCurso.add(curso);
+		LOGGER.info("Se agregó un curso a la lista de cursos mediante el formulario");
 		modeloVista.addObject("curso", arrayCurso);
 		return modeloVista;
 	}

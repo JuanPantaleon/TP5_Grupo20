@@ -2,6 +2,8 @@ package ar.edu.fi.unju.aplicacion.controller;
 
 import java.util.ArrayList;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,8 @@ import ar.edu.fi.unju.aplicacion.model.Docente;
 @Controller
 @RequestMapping("/docente")
 public class DocenteController {
+	
+	Log LOGGER = LogFactory.getLog(DocenteController.class);
 
 	@GetMapping("/cargar") //URL para Cargar un Docente
 	public String getDocentePage(Model model) { //Tenemos como parametro model de tipo Model
@@ -30,6 +34,7 @@ public class DocenteController {
 		arrayDocentes.add(new Docente(102,"Lionel","Messi","l10m@mail.com","3884987462"));
 		arrayDocentes.add(new Docente(103,"Carlos","Tevez","apache@mail.com","3881539562"));
 		arrayDocentes.add(docente);
+		LOGGER.info("Se agregó un docente a la lista de docentes mediante el formulario");
 		modeloVista.addObject("docentes", arrayDocentes);
 		return modeloVista;
 	}
