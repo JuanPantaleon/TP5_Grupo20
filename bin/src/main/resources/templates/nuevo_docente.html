@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>TP5 - Docentes</title>
+	</head>
+	<body>
+		<header th:replace="/layouts/header::header"></header>
+		<br>
+		<div class="container">
+			<form th:action="@{/docente}" method="post" th:object="${docenteAlias}">
+				<div class="mb-3">
+				  	<label for="idLegajo" class="form-label">Legajo</label>
+					<input type="number" class="form-control" id="idLegajo" th:field=*{legajo}>
+				</div>
+				<div class="mb-3">
+				  	<label for="idNombres" class="form-label">Nombres</label>
+					<input type="text" class="form-control" id="idNombres" th:field=*{nombre}>
+				</div>
+				<div class="mb-3">
+				  	<label for="idApellidos" class="form-label">Apellidos</label>
+					<input type="text" class="form-control" id="idApellidos" th:field=*{apellido}>
+				</div>		
+				<div class="mb-3">
+				  	<label for="idEmail" class="form-label">E-Mail</label>
+					<input type="email" class="form-control" id="idEmail" th:field=*{email}>
+				</div>	
+				<div class="mb-3">
+				  	<label for="idTel" class="form-label">Telefono</label>
+					<input type="text" class="form-control" id="idTel" th:field=*{telefono}>
+				</div>	
+				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+				  	<button type="submit" class="btn btn-primary">Enviar</button>	
+				  	<a th:href="@{/docente}" class="btn btn-secondary">Cancelar</a>
+				</div>
+			</form>
+		</div>
+		<footer th:replace="/layouts/footer::footer"></footer>
+	</body>
+</html>
