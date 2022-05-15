@@ -1,55 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
 	<head>
 		<meta charset="utf-8">
 		<title>TP5 - Idiomas</title>
 	</head>
 	<body>
+		<header th:replace="layouts/header::header"></header>
 		<header>
 			<h1>Idiomas</h1>
 			<br/>
-			<img src="../static/images/idiomas.jpeg" width="300" height="150" alt="Img idiomas" title="idiomas">
+			<img th:src="@{/images/idiomas.jpeg}" width="300" height="150" alt="Img idiomas" title="idiomas">
 		</header>
-		<nav>
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="agenda.html">Agenda</a></li>
-				<li><a href="beneficios.html">Beneficios y Becas</a></li>
-				<li><a href="contacto.html">Contactanos</a></li>
-			</ul>
-		</nav>
+		<br>
 		<section>
 			<h3>Cursos Disponibles</h3>
 			<p>Listado de cursos que se encuentran con inscripcion abierta:</p>
-			<table>
-				<tr>
-					<th>Titulo del Curso</th>
-					<th>Fecha Inicio</th>
-					<th>Horario</th>
-					<th>Fecha Fin</th>
-					<th>Modalidad</th>
+			<table class="table">
+			  <thead>
+			    <tr>
+				     <th scope="col">Titulo del Curso</th>
+				     <th scope="col">Fecha Inicio</th>
+				     <th scope="col">Horario</th>
+				     <th scope="col">Fecha Fin</th>
+				     <th>Modalidad</th>
 					<th>Docente</th>
 					<th>Duracion en semanas</th>
-				</tr>
-				<tr>
-					<td>Ingles I</td>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      	<td>Ingles I</td>
 					<td>26/06/2022</td>
 					<td>9-11hs</td>
 					<td>18/12/2022</td>
 					<td>Presencial</td>
 					<td>Arturo Vidal</td>
 					<td>24 semanas</td>
-				</tr>
-				<tr>
-					<td>Frances I</td>
+			    </tr>
+			    <tr>
+			      	<td>Frances I</td>
 					<td>15/01/2023</td>
 					<td>10-12hs</td>
 					<td>20/4/2023</td>
 					<td>Virtual</td>
 					<td>Gabriel Neves</td>
 					<td>12 semanas</td>
-				</tr>
+			    </tr>
+			  </tbody>
 			</table>
 		</section>
+		<footer th:replace="layouts/footer::footer"></footer>
 	</body>
 </html>

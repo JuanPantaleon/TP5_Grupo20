@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>TP5 - Beca</title>
+	</head>
+	<body>
+		<header th:replace="layouts/header::header"></header>
+		<br>
+		<div class="container">
+			<h1 class="text-center text-primary">Beca</h1>
+			<br>
+			<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+			  <a th:href="@{/beca/cargar}" class="btn btn-primary me-md-2" >Nueva</a>
+			</div>
+			<table class="table">
+				<thead>
+				    <tr>
+				      <th scope="col">Codigo</th>
+				      <th scope="col">Curso</th>
+				      <th scope="col">Fecha Inicio</th>
+				      <th scope="col">Fecha Cierre</th>
+				      <th scope="col">Estado</th>
+				    </tr>
+				</thead>
+				<tbody>
+				    <tr th:each="beca: ${becas}">
+				      <th scope="row" th:text="${beca.codigo}"></th>
+				      <td th:text="${beca.curso.titulo}"></td>
+				      <td th:text="${beca.fechaInicio}"></td>
+				      <td th:text="${beca.fechaCierre}"></td>
+				      <td th:text="${beca.estado}"></td>
+				      <td>
+				      	<a class="btn btn-warning">Editar</a>
+				      	<a class="btn btn-danger">Eliminar</a>
+				      </td>
+				    </tr>
+				</tbody>
+			</table>
+		</div>
+		<footer th:replace="layouts/footer::footer"></footer>
+	</body>
+</html>

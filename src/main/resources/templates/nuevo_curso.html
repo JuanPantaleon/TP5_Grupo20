@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>TP5 - Curso</title>
+	</head>
+	<body>
+		<header th:replace="/layouts/header::header"></header>
+		<br>
+		<div class="container">
+			<form th:action="@{/curso}" method="post" th:object="${cursoAlias}">
+				<div class="mb-3">
+				  	<label for="idCodigo" class="form-label">Codigo</label>
+					<input type="number" class="form-control" id="idCodigo" th:field=*{codigo}>
+				</div>
+				<div class="mb-3">
+				  	<label for="idTitulo" class="form-label">Titulo</label>
+					<input type="text" class="form-control" id="idTitulo" th:field=*{titulo}>
+				</div>
+				<div class="mb-3">
+					<label class="mb-2">Categoria</label>
+					<select class="form-select" aria-label="Categoria" th:field=*{categoria}>
+						<option value="Idiomas" >Idiomas</option>
+						<option value="Diseño">Diseño</option>
+						<option value="Desarrollo">Desarrollo</option>
+						<option value="Marketing">Marketing</option>
+						<option value="Conferencia">Conferencia</option>
+					</select>
+				</div>
+				<div class="mb-3">
+				  	<label for="idFechaInicio" class="form-label">Fecha Inicio</label>
+					<input type="date" class="form-control" id="idFechaInicio" th:field=*{fechaInicio}>
+				</div>
+				<div class="mb-3">
+				  	<label for="idFechaFin" class="form-label">Fecha Fin</label>
+					<input type="date" class="form-control" id="idFechaFin" th:field=*{fechaFin}>
+				</div>
+				<div class="mb-3">
+				  	<label for="idHoras" class="form-label">Cantidad Horas</label>
+					<input type="number" class="form-control" id="idHoras" th:field=*{cantidadHoras}>
+				</div>
+				<div class="mb-3">
+					<label class="mb-2">Modalidad</label>
+					<select class="form-select" aria-label="Modalidad" th:field=*{modalidad}>
+						<option value="Idiomas" >Virtual</option>
+						<option value="Diseño">Presencial</option>
+					</select>
+				</div>
+				
+				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+				  	<button type="submit" class="btn btn-primary">Enviar</button>	
+				  	<a th:href="@{/curso}" class="btn btn-secondary">Cancelar</a>
+				</div>
+			</form>
+		</div>
+		<footer th:replace="/layouts/footer::footer"></footer>
+	</body>
+</html>

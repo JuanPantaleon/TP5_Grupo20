@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>TP5 - Curso</title>
+	</head>
+	<body>
+		<header th:replace="layouts/header::header"></header>
+		<br>
+		<div class="container">
+			<h1 class="text-center text-primary">Curso</h1>
+			<br>
+			<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+			  <a th:href="@{/curso/cargar}" class="btn btn-primary me-md-2" >Nuevo</a>
+			</div>
+			<table class="table">
+				<thead>
+				    <tr>
+				      <th scope="col">Codigo</th>
+				      <th scope="col">Titulo</th>
+				      <th scope="col">Categoria</th>
+				      <th scope="col">Fecha Inicio</th>
+				      <th scope="col">Fecha Fin</th>
+				      <th scope="col">Cantidad de Horas</th>
+				      <th scope="col">Modalidad</th>
+				      <th scope="col">Docentes</th>
+				    </tr>
+				</thead>
+				<tbody>
+				    <tr th:each="curso: ${curso}">
+				      <th scope="row" th:text="${curso.codigo}"></th>
+				      <td th:text="${curso.titulo}"></td>
+				      <td th:text="${curso.categoria}"></td>
+				      <td th:text="${curso.fechaInicio}"></td>
+				      <td th:text="${curso.fechaFin}"></td>
+				      <td th:text="${curso.cantidadHoras}"></td>
+				      <td th:text="${curso.modalidad}"></td>
+				      <td th:text="${curso.docente.nombre}"></td>
+				      <td>
+				      	<a class="btn btn-warning">Editar</a>
+				      	<a class="btn btn-danger">Eliminar</a>
+				      </td>
+				    </tr>
+				</tbody>
+			</table>
+		</div>
+		<footer th:replace="layouts/footer::footer"></footer>
+	</body>
+</html>
