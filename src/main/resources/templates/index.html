@@ -8,20 +8,22 @@
 	<body>
 		<header th:replace="layouts/header::header"></header>
 		<header>
-			<h1>Inicio</h1>
+			<h1 class="text-center text-primary">Inicio</h1>
 			<br/>
-			<img th:src="@{images/cursos.jpg}" width="300" height="200" alt="Imagen del punto 1" title="presentacion">
+			<img th:src="@{images/cursos.jpg}" class="rounded mx-auto d-block" width="300" height="200" alt="Imagen de presentacion">
 		</header>
 		<br/>
 		<section>
-			<h1>Cursos con inscripcion abierta</h1>
-			<ol>
-				<li><a th:href="@{/idiomas}">Idiomas</a></li>
-				<li><a href="">Diseño</a></li>
-				<li><a href="">Desarrollo</a></li>
-				<li><a href="">Marketing</a></li>
-				<li><a href="">Conferencias</a></li>
-			</ol>
+			<h1 class="text-center text-primary">Cursos con inscripcion abierta</h1>
+			<div class="container">
+				<ol class="list-group list-group-numbered">
+					<li class="list-group-item"><a th:href="@{/idiomas}">Idiomas</a></li>
+					<li class="list-group-item"><a href="">Diseño</a></li>
+					<li class="list-group-item"><a href="">Desarrollo</a></li>
+					<li class="list-group-item"><a href="">Marketing</a></li>
+					<li class="list-group-item"><a href="">Conferencias</a></li>
+				</ol>
+			</div>
 		</section>
 		<footer th:replace="layouts/footer::footer"></footer>
 	</body>
