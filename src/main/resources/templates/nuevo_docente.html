@@ -12,22 +12,27 @@
 				<div class="mb-3">
 				  	<label for="idLegajo" class="form-label">Legajo</label>
 					<input type="number" class="form-control" id="idLegajo" th:field=*{legajo}>
+					<div class="text-danger" th:if="${#fields.hasErrors('legajo')}" th:errors="*{legajo}"></div>
 				</div>
 				<div class="mb-3">
 				  	<label for="idNombres" class="form-label">Nombres</label>
 					<input type="text" class="form-control" id="idNombres" th:field=*{nombre}>
+					<div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
 				</div>
 				<div class="mb-3">
 				  	<label for="idApellidos" class="form-label">Apellidos</label>
 					<input type="text" class="form-control" id="idApellidos" th:field=*{apellido}>
+					<div class="text-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></div>
 				</div>		
 				<div class="mb-3">
 				  	<label for="idEmail" class="form-label">E-Mail</label>
 					<input type="email" class="form-control" id="idEmail" th:field=*{email}>
+					<div class="text-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></div>
 				</div>	
 				<div class="mb-3">
 				  	<label for="idTel" class="form-label">Telefono</label>
 					<input type="text" class="form-control" id="idTel" th:field=*{telefono}>
+					<div class="text-danger" th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></div>
 				</div>	
 				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 				  	<button type="submit" class="btn btn-primary">Enviar</button>	

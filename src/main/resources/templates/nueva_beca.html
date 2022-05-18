@@ -12,14 +12,25 @@
 				<div class="mb-3">
 				  	<label for="idCodigo" class="form-label">Codigo</label>
 					<input type="number" class="form-control" id="idCodigo" th:field=*{codigo}>
+					<div class="text-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></div>
+				</div>
+				<div class="mb-3">
+					<label class="mb-2">Curso</label>
+					<select class="form-select" aria-label="Curso" th:field=*{curso.titulo}>
+						<option value="Ingles I" >Ingles I</option>
+						<option value="Frances I">Frances I</option>
+					</select>
+					<div class="text-danger" th:if="${#fields.hasErrors('curso.titulo')}" th:errors="*{curso.titulo}"></div>
 				</div>
 				<div class="mb-3">
 				  	<label for="idFechaInicio" class="form-label">Fecha Inicio</label>
 					<input type="date" class="form-control" id="idFechaInicio" th:field=*{fechaInicio}>
+					<div class="text-danger" th:if="${#fields.hasErrors('fechaInicio')}" th:errors="*{fechaInicio}"></div>
 				</div>
 				<div class="mb-3">
 				  	<label for="idFechaFin" class="form-label">Fecha Cierre</label>
 					<input type="date" class="form-control" id="idFechaFin" th:field=*{fechaCierre}>
+					<div class="text-danger" th:if="${#fields.hasErrors('fechaCierre')}" th:errors="*{fechaCierre}"></div>
 				</div>
 				<div class="mb-3">
 					<label class="mb-2">Estado</label>
@@ -27,6 +38,7 @@
 						<option value="Activa" >Activa</option>
 						<option value="Inactiva">Inactiva</option>
 					</select>
+					<div class="text-danger" th:if="${#fields.hasErrors('estado')}" th:errors="*{estado}"></div>
 				</div>
 				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 				  	<button type="submit" class="btn btn-primary">Enviar</button>	

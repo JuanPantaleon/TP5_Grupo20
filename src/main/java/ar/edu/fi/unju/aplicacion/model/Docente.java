@@ -1,10 +1,21 @@
 package ar.edu.fi.unju.aplicacion.model;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+
 public class Docente {
+	@Positive(message="Debe ingresar un legajo correcto") @NotNull
 	private int legajo;
+	@NotEmpty(message="El nombre del alumno no puede estar vacio")
 	private String nombre;
+	@NotEmpty(message="El apellido del alumno no puede estar vacio")
 	private String apellido;
+	@NotEmpty @Email
 	private String email;
+	@NotEmpty(message="El telefono del alumno no puede estar vacio")
+	@Positive(message="Debe ingresar un numero de telefono")
 	private String telefono;
 	
 	public Docente() {

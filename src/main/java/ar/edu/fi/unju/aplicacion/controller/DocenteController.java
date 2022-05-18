@@ -1,17 +1,18 @@
 package ar.edu.fi.unju.aplicacion.controller;
 
-import java.util.ArrayList;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import ar.edu.fi.unju.aplicacion.lista.ListaDocente;
 import ar.edu.fi.unju.aplicacion.model.Docente;
 
 @Controller
@@ -27,26 +28,25 @@ public class DocenteController {
 	}
 	
 	@PostMapping("")
-	ModelAndView getListaDocentePage(@ModelAttribute("docenteAlias") Docente docente) {
+	ModelAndView getListaDocentePage(@Validated @ModelAttribute("docenteAlias") Docente docente, BindingResult bindingResult) {
+		if(bindingResult.hasErrors()) {
+			ModelAndView modeloVista = new ModelAndView("nuevo_docente");
+			modeloVista.addObject("docenteAlias", docente);
+			return modeloVista;
+		}
 		ModelAndView modeloVista = new ModelAndView("lista_docente");
-		ArrayList<Docente> arrayDocentes = new ArrayList<Docente>();
-		arrayDocentes.add(new Docente(100,"Alejandro","Ysya","ysya@mail.com","3884789562"));
-		arrayDocentes.add(new Docente(102,"Lionel","Messi","l10m@mail.com","3884987462"));
-		arrayDocentes.add(new Docente(103,"Carlos","Tevez","apache@mail.com","3881539562"));
-		arrayDocentes.add(docente);
+		ListaDocente listaDocente = new ListaDocente();
+		listaDocente.getDocentes().add(docente);
 		LOGGER.info("Se agregó un docente a la lista de docentes mediante el formulario");
-		modeloVista.addObject("docentes", arrayDocentes);
+		modeloVista.addObject("docentes", listaDocente.getDocentes());
 		return modeloVista;
 	}
 	
 	@GetMapping("")
 	ModelAndView mostrarListaDocentesPage() {
 		ModelAndView modeloVista = new ModelAndView("lista_docente");
-		ArrayList<Docente> arrayDocentes = new ArrayList<Docente>();
-		arrayDocentes.add(new Docente(100,"Alejandro","Ysya","ysya@mail.com","3884789562"));
-		arrayDocentes.add(new Docente(102,"Lionel","Messi","l10m@mail.com","3884987462"));
-		arrayDocentes.add(new Docente(103,"Carlos","Tevez","apache@mail.com","3881539562"));
-		modeloVista.addObject("docentes", arrayDocentes);
+		ListaDocente listaDocente = new ListaDocente();
+		modeloVista.addObject("docentes", listaDocente.getDocentes());
 		return modeloVista;
 	}
 	

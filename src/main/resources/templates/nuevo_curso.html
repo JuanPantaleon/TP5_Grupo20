@@ -12,10 +12,12 @@
 				<div class="mb-3">
 				  	<label for="idCodigo" class="form-label">Codigo</label>
 					<input type="number" class="form-control" id="idCodigo" th:field=*{codigo}>
+					<div class="text-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></div>
 				</div>
 				<div class="mb-3">
 				  	<label for="idTitulo" class="form-label">Titulo</label>
 					<input type="text" class="form-control" id="idTitulo" th:field=*{titulo}>
+					<div class="text-danger" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></div>
 				</div>
 				<div class="mb-3">
 					<label class="mb-2">Categoria</label>
@@ -26,18 +28,22 @@
 						<option value="Marketing">Marketing</option>
 						<option value="Conferencia">Conferencia</option>
 					</select>
+					<div class="text-danger" th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></div>
 				</div>
 				<div class="mb-3">
 				  	<label for="idFechaInicio" class="form-label">Fecha Inicio</label>
 					<input type="date" class="form-control" id="idFechaInicio" th:field=*{fechaInicio}>
+					<div class="text-danger" th:if="${#fields.hasErrors('fechaInicio')}" th:errors="*{fechaInicio}"></div>
 				</div>
 				<div class="mb-3">
 				  	<label for="idFechaFin" class="form-label">Fecha Fin</label>
 					<input type="date" class="form-control" id="idFechaFin" th:field=*{fechaFin}>
+					<div class="text-danger" th:if="${#fields.hasErrors('fechaFin')}" th:errors="*{fechaFin}"></div>
 				</div>
 				<div class="mb-3">
 				  	<label for="idHoras" class="form-label">Cantidad Horas</label>
 					<input type="number" class="form-control" id="idHoras" th:field=*{cantidadHoras}>
+					<div class="text-danger" th:if="${#fields.hasErrors('cantidadHoras')}" th:errors="*{cantidadHoras}"></div>
 				</div>
 				<div class="mb-3">
 					<label class="mb-2">Modalidad</label>
@@ -45,8 +51,17 @@
 						<option value="Idiomas" >Virtual</option>
 						<option value="Diseño">Presencial</option>
 					</select>
+					<div class="text-danger" th:if="${#fields.hasErrors('modalidad')}" th:errors="*{modalidad}"></div>
 				</div>
-				
+				<div class="mb-3">
+					<label class="mb-2">Docente</label>
+					<select class="form-select" aria-label="Docente" th:field=*{docente.nombre}>
+						<option value="Alejandro" >Alejandro</option>
+						<option value="Lionel">Lionel</option>
+						<option value="Carlos">Carlos</option>
+					</select>
+					<div class="text-danger" th:if="${#fields.hasErrors('docente')}" th:errors="*{docente}"></div>
+				</div>
 				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 				  	<button type="submit" class="btn btn-primary">Enviar</button>	
 				  	<a th:href="@{/curso}" class="btn btn-secondary">Cancelar</a>

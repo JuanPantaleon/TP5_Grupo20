@@ -1,18 +1,37 @@
 package ar.edu.fi.unju.aplicacion.model;
 
+import java.time.LocalDate;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Curso {
+	@Positive(message="Debe ingresar un legajo codigo correcto") @NotNull
 	private int codigo;
+	@NotEmpty(message="El titulo no puede estar vacio")
 	private String titulo;
+	@NotEmpty(message="La categoria no puede estar vacia")
 	private String categoria;
-	private String fechaInicio;
-	private String fechaFin;
+	@NotNull(message="La fecha no puede ser nula")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private LocalDate fechaInicio;
+	@NotNull(message="La fecha no puede ser nula")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private LocalDate fechaFin;
+	@Positive(message="Debe ingresar un numero correcto de horas") @NotNull
 	private int cantidadHoras;
+	@NotEmpty(message="La modalidad no puede estar vacia")
 	private String modalidad;
+	@NotNull
 	private Docente docente;
 	
 	public Curso() {
 		// TODO Auto-generated constructor stub
 	}
+
 
 	public int getCodigo() {
 		return codigo;
@@ -38,19 +57,19 @@ public class Curso {
 		this.categoria = categoria;
 	}
 
-	public String getFechaInicio() {
+	public LocalDate getFechaInicio() {
 		return fechaInicio;
 	}
 
-	public void setFechaInicio(String fechaInicio) {
+	public void setFechaInicio(LocalDate fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 
-	public String getFechaFin() {
+	public LocalDate getFechaFin() {
 		return fechaFin;
 	}
 
-	public void setFechaFin(String fechaFin) {
+	public void setFechaFin(LocalDate fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 
@@ -78,8 +97,7 @@ public class Curso {
 		this.docente = docente;
 	}
 
-	public Curso(int codigo, String titulo, String categoria, String fechaInicio, String fechaFin, int cantidadHoras,
-			String modalidad, Docente docente) {
+	public Curso(int codigo, String titulo, String categoria, LocalDate fechaInicio, LocalDate fechaFin, int cantidadHoras, String modalidad, Docente docente) {
 		super();
 		this.codigo = codigo;
 		this.titulo = titulo;
@@ -89,13 +107,6 @@ public class Curso {
 		this.cantidadHoras = cantidadHoras;
 		this.modalidad = modalidad;
 		this.docente = docente;
-	}
-
-	@Override
-	public String toString() {
-		return "Curso [codigo=" + codigo + ", titulo=" + titulo + ", categoria=" + categoria + ", fechaInicio="
-				+ fechaInicio + ", fechaFin=" + fechaFin + ", cantidadHoras=" + cantidadHoras + ", modalidad="
-				+ modalidad + ", docente=" + docente + "]";
 	}
 	
 }
