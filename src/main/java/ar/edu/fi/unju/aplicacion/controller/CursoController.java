@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.fi.unju.aplicacion.lista.ListaCurso;
+import ar.edu.fi.unju.aplicacion.lista.ListaDocente;
 import ar.edu.fi.unju.aplicacion.model.Curso;
 
 @Controller
@@ -24,6 +25,7 @@ public class CursoController {
 	@GetMapping("/cargar")
 	public String getCargarCursoPage(Model model) {
 		model.addAttribute("cursoAlias", new Curso());
+		model.addAttribute("docentesAlias", new ListaDocente().getDocentes());
 		return "nuevo_curso";
 	}
 	
@@ -32,6 +34,7 @@ public class CursoController {
 		if(bindingResult.hasErrors()){
 			ModelAndView modeloVista = new ModelAndView("nuevo_curso");
 			modeloVista.addObject("cursoAlias", curso);
+			modeloVista.addObject("docentesAlias", new ListaDocente().getDocentes());
 			return modeloVista;
 		}
 		ModelAndView modeloVista = new ModelAndView("lista_curso");

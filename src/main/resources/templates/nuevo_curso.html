@@ -56,11 +56,9 @@
 				<div class="mb-3">
 					<label class="mb-2">Docente</label>
 					<select class="form-select" aria-label="Docente" th:field=*{docente.nombre}>
-						<option value="Alejandro" >Alejandro</option>
-						<option value="Lionel">Lionel</option>
-						<option value="Carlos">Carlos</option>
+						<option th:each="docentes : ${docentesAlias}" th:value="${docentes.nombre}" th:text="${docentes.nombre +', '+docentes.apellido}"></option>
 					</select>
-					<div class="text-danger" th:if="${#fields.hasErrors('docente')}" th:errors="*{docente}"></div>
+					<div class="text-danger" th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></div>
 				</div>
 				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 				  	<button type="submit" class="btn btn-primary">Enviar</button>	

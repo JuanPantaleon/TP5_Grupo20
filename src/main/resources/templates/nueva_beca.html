@@ -17,8 +17,7 @@
 				<div class="mb-3">
 					<label class="mb-2">Curso</label>
 					<select class="form-select" aria-label="Curso" th:field=*{curso.titulo}>
-						<option value="Ingles I" >Ingles I</option>
-						<option value="Frances I">Frances I</option>
+						<option th:each="cursos:${cursosAlias}" th:value="${cursos.titulo}" th:text="${cursos.titulo}"></option>
 					</select>
 					<div class="text-danger" th:if="${#fields.hasErrors('curso.titulo')}" th:errors="*{curso.titulo}"></div>
 				</div>

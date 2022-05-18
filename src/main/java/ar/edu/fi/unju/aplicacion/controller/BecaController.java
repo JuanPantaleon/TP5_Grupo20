@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.fi.unju.aplicacion.lista.ListaBeca;
+import ar.edu.fi.unju.aplicacion.lista.ListaCurso;
 import ar.edu.fi.unju.aplicacion.model.Beca;
 
 @Controller
@@ -24,6 +25,7 @@ public class BecaController {
 	@GetMapping("/cargar")
 	public String getCargarBecaPage(Model model) {
 		model.addAttribute("becaAlias", new Beca());
+		model.addAttribute("cursosAlias", new ListaCurso().getCursos());
 		return "nueva_beca";
 	}
 	
@@ -32,6 +34,7 @@ public class BecaController {
 		if(bindingResult.hasErrors()) {
 			ModelAndView modeloVista = new ModelAndView("nueva_beca");
 			modeloVista.addObject("becaAlias", beca);
+			modeloVista.addObject("cursosAlias", new ListaCurso().getCursos());
 			return modeloVista;
 		}
 		ModelAndView modeloVista = new ModelAndView("lista_beca");

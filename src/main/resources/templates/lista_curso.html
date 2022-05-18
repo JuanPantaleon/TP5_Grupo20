@@ -35,7 +35,7 @@
 				      <td th:text="${curso.fechaFin}"></td>
 				      <td th:text="${curso.cantidadHoras}"></td>
 				      <td th:text="${curso.modalidad}"></td>
-				      <td th:text="${curso.docente.nombre}"></td>
+				      <td th:text="${curso.docente.nombre + ', ' +curso.docente.apellido}"></td>
 				      <td>
 				      	<a class="btn btn-warning">Editar</a>
 				      	<a class="btn btn-danger">Eliminar</a>
